@@ -10,8 +10,7 @@ public class SocketClient extends Thread {
 
     @Override
     public void run() {
-        try {
-            Socket socket = new Socket("localhost", SocketServer.PORT);
+        try(Socket socket = new Socket("localhost", SocketServer.PORT);) {            
 
             new Thread() {
                 @Override
