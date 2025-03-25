@@ -1,5 +1,7 @@
 package com.alexandre;
 
+import com.alexandre.controller.LoginController;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,21 +16,21 @@ public class App extends Application {
         try {
 
             //Carregando o arquivo FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/alexandre/view/MainChat.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/alexandre/view/Login.fxml"));
             //Instanciando e setando o Controller do FXML
-            //RegisterController registerController = new RegisterController();
-            //loader.setController(registerController);
+            LoginController loginController = new LoginController();
+            loader.setController(loginController);
             //Criando a cena
             Parent root = loader.load();
             Scene scene = new Scene(root);
             
             //Carregando e definindo algumas configs da cena
-            primaryStage.setScene(scene);                                         //Definindo a cena
-            primaryStage.setResizable(false);                               //Definindo a janela como não redimensionável
-            //primaryStage.getIcons().add(new Image(getClass()
-            //    .getResourceAsStream("/com/alexandre/icons/MainLogo.png")));   //Definindo o Icone da janela
-            primaryStage.setTitle("Chat - Java");                           //Definindo o titulo da janela
-            primaryStage.show();                                                  //Mostrando a janela
+            primaryStage.setScene(scene);                                            //Definindo a cena
+            primaryStage.setResizable(false);                                  //Definindo a janela como não redimensionável
+            primaryStage.getIcons().add(new Image(getClass()
+                .getResourceAsStream("/com/alexandre/icons/MainLogo.png")));    //Definindo o Icone da janela
+            primaryStage.setTitle("Chat - Java");                              //Definindo o titulo da janela
+            primaryStage.show();                                                     //Mostrando a janela
         } catch(Exception e) {
 
             System.out.println("Erro - 01");  //TO - DO

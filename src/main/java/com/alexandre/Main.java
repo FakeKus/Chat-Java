@@ -5,8 +5,8 @@ import com.alexandre.server.SocketServer;
 
 public class Main {
     public static void main(String[] args) {
-        new SocketServer().start();
-        new SocketClient().start();
-        //App.main(args);
+        //new SocketServer().start();
+        //new SocketClient().start();
+        App.main(args);
     }
 }
