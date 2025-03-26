@@ -11,15 +11,11 @@ import com.alexandre.controller.ChatController;
 
 public class ManagerClient extends Thread {
 
-    private ChatController chatController;
-
     private Socket socket;
-    private BufferedReader reader;
     private PrintWriter writer;
     private static Map<String, PrintWriter> clientWriters = new HashMap<>();
 
     private String name;
-    private String areaMessage;
 
     public ManagerClient(Socket socket) {
         this.socket = socket;

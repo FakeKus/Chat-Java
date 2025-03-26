@@ -3,8 +3,6 @@ package com.alexandre.server;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import com.alexandre.client.ManagerClient;
-
 public class SocketServer extends Thread {
 
     public static final int PORT = 8282;
