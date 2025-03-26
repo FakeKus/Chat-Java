@@ -8,17 +8,23 @@ import com.alexandre.client.ManagerClient;
 public class SocketServer extends Thread {
 
     public static final int PORT = 8282;
+    private static ServerSocket serverSocket;
+    private Socket socket;
+
+    public SocketServer() {
+        start();
+    }
 
     @Override
     public void run() {
-        ServerSocket serverSocket = null;
+        serverSocket = null;
         try {
             serverSocket = new ServerSocket(PORT);
             System.out.println("Server iniciado na porta: " + PORT);
+            System.out.println(serverSocket.toString());
 
             while (true) {
-                Socket socket = serverSocket.accept();
-                new ManagerClient(socket);
+                socket = serverSocket.accept();
             }
         } catch (Exception e) {
             System.out.println("Erro ao iniciar o server 001: " + e.getMessage());
@@ -28,5 +34,9 @@ public class SocketServer extends Thread {
                 System.out.println("Erro ao fechar o server 002: " + e2.getMessage());
             }
         }
+    }
+
+    public Socket getSocketClient() {
+        return socket;
     }
 }

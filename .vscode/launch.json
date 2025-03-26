@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Maincopy",
+            "request": "launch",
+            "mainClass": "com.alexandre.Maincopy",
+            "projectName": "chatJava"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
